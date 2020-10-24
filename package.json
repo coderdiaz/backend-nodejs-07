@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "prod:start": "node index.js",
     "create-migration": "sequelize migration:create --name ",
     "run-migration": "sequelize db:migrate"
   },

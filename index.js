@@ -6,6 +6,7 @@
 
  */
 
+require('dotenv').config();
 const helmet = require('helmet')
 const cors = require('cors')
 const express = require('express')
@@ -25,4 +26,4 @@ app.get('/healthcheck', (request,response)=>{
 
 app.use('/api', routes)
 
-app.listen(3000, ()=> console.log("listening port 3000"))
+app.listen(process.env.PORT, ()=> console.log(`listening port ${process.env.PORT}`))

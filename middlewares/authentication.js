@@ -4,7 +4,7 @@ const { models } = sequelize
 
 function authenticate(request, response, next) {
   const { authorization } = request.headers
-  jwt.verify(authorization, 'mysupersecretkey', async (error, decoded) => {
+  jwt.verify(authorization, process.env.JWT_SECRETKEY, async (error, decoded) => {
     if (error) {
       console.log(error)
       return response.status(401).json({ message: 'Unauthorized' })

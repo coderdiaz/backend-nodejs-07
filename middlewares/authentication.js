@@ -8,7 +8,7 @@ function authenticate(request, response, next) {
     if (error) {
       console.log(error)
       return response.status(401).json({ message: 'Unauthorized' })
-    }
+    } 
     request.user = await models.users.findByPk(decoded.userId)
     next()
   })
